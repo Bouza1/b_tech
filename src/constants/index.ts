@@ -1,43 +1,48 @@
 import { facebook, instagram, paint, support, repair, twitter } from '../assets/icons';
 import {
-    phoneDeal1,
-    phoneDeal2,
-    phoneDeal3,
     customer1,
     customer2,
     gCard1,
     ram1,
     phone1,
-    desktop1,
+    desktop1, s22, iPhoneXR, iPhone14,
 } from '../assets/images';
+import { NavLink } from '../components/NavBar.tsx';
 
-export const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#products', label: 'Shop' },
-    { href: '#about-us', label: 'About Us' },
-    { href: '#repairs', label: 'Repairs' },
-    { href: '#contact-us', label: 'Contact Us' },
+export const navLinks: NavLink[] = [
+    { name: 'Home', href: 'home', current: true },
+    { name: 'Shop', href: 'products', current: false },
+    { name: 'About Us', href: 'about-us', current: false },
+    { name: 'Repairs', href: 'repairs', current: false },
+    {name: 'News', href: 'news', current: false },
 ];
 
 export const phoneDeals = [
     {
-        thumbnail: phoneDeal1,
-        bigPhone: phoneDeal1,
+        thumbnail: s22,
+        bigPhone: s22,
+        title:"Samsung S22 - 128GB",
+        bannerStats:["1y Warranty", "Free Sim", "Factory Reset", "Unlocked"]
     },
     {
-        thumbnail: phoneDeal2,
-        bigPhone: phoneDeal2,
+        thumbnail: iPhoneXR,
+        bigPhone: iPhoneXR,
+        title:"IPhone XR - 128GB",
+        bannerStats:["Free Sim", "Factory Reset", "Unlocked"]
     },
     {
-        thumbnail: phoneDeal3,
-        bigPhone: phoneDeal3,
+        thumbnail: iPhone14,
+        bigPhone: iPhone14,
+        title:"IPhone 14 - 256GB",
+        bannerStats:["Free Sim", "Factory Reset", "New Battery"]
+
     },
 ];
 
 export const statistics = [
-    { value: '1k+', label: 'Brands' },
-    { value: '500+', label: 'Shops' },
-    { value: '250k+', label: 'Customers' },
+    { value: '1y', label: 'Warranty' },
+    { value: '1k+', label: 'Customers' },
+    { value: '20y', label: 'Established' },
 ];
 
 export const specialOffers = [

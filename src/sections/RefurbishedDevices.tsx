@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const RefurbishedDevices = () => {
     return (
-        <>
+        <div className="flex flex-row">
             <motion.div
                 className="flex flex-1 flex-col"
                 id="about-us"
@@ -23,17 +23,17 @@ const RefurbishedDevices = () => {
                 }}
                 viewport={{ once: false }}
             >
-                <h2 className="font-palanquin text-4xl md:text-8xl capitalize font-bold text-blue-500">
+                <h2 className="font-palanquin text-4xl md:text-8xl capitalize font-bold text-blue-500 text-left">
                     Refurbished <span className="text-black"> Device?</span>
                 </h2>
 
-                <p className="mt-4 lg:max-w-lg info-text">
+                <p className="mt-4 lg:max-w-lg info-text text-left">
                     Experience the perfect blend of performance and value with our expertly
                     refurbished computers. Each device undergoes rigorous testing and refurbishment
                     to ensure top-tier functionality and reliability. Plus, enjoy peace of mind with
                     our comprehensive parts warranty, guaranteeing unmatched quality and support.
                 </p>
-                <p className="mt-6 info-text lg:max-w-lg">
+                <p className="mt-6 info-text lg:max-w-lg  text-left">
                     Our dedication to details ensures your satisfaction.
                 </p>
             </motion.div>
@@ -73,7 +73,7 @@ const RefurbishedDevices = () => {
                     </p>
                 </div>
             </motion.div>
-        </>
+        </div>
     );
 };
 

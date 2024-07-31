@@ -7,7 +7,7 @@ interface Props {
 
 const Section = ({ id, children }: Props) => {
     return (
-        <section id={id} className={`min-h-svh max-h-svh w-full flex justify-center items-center`}>
+        <section id={id} className={`w-full flex justify-center items-center mb-5 border-b-4 border-b-blue-500`}>
             {children}
         </section>
     );
