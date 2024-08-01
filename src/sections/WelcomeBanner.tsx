@@ -1,28 +1,37 @@
 import { useState } from 'react';
 import { phoneDeals, statistics } from '../constants';
-import { phoneDeal1 } from '../assets/images';
 import { arrowRight } from '../assets/icons';
-import {BigButton, AnimatedImage, PhoneDealCard} from "../components";
+import { BigButton, AnimatedImage, PhoneDealCard } from "../components";
 
+export interface Phone {
+    thumbnail: string;
+    bigPhone: string;
+    title?: string;
+    bannerStats?: string[];
+}
 
 const WelcomeBanner = () => {
-    const [bigPhoneImg, setBigPhoneImg] = useState(phoneDeal1);
+    const [phoneSelected, setPhoneSelected] = useState<Phone>(phoneDeals[0]);
+
     return (
-        <div className="flex xl:flex-row flex-col justify-center text-left">
-            <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x">
-                <h1 className="mt-6 font-palanquin text-8xl font-bold">
+        <div className="flex xl:flex-row flex-col justify-center mt-10 ml-20 text-left">
+            <div className="xl:w-2/5 flex flex-col justify-center items-start md:w-full">
+                <h1 className="mt-6 font-palanquin text-4xl lg:text-8xl z-30 font-bold">
                     New Arrivals
                     <br />
-                    <span className="text-blue-500 inline-block mt-3">Dell Laptops</span>
+                    <span className="text-blue-500 inline-block mt-3">Refurbished Phones</span>
                 </h1>
-                <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
-                    Discover powerful refurbished laptops, blending cutting-edge technology and
-                    sleek design for your productivity and creativity.
-                </p>
+                <div className="hidden lg:flex w-full">
+                    <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 sm:max-w-sm">
+                        Discover powerful refurbished phones, blending cutting-edge technology and
+                        sleek design for your productivity and creativity.
+                    </p>
+                </div>
+                <div className="w-full mt-8 mb-8 hidden md:flex">
+                    <BigButton label="Shop Now" iconURL={arrowRight} />
+                </div>
 
-                <BigButton label="Shop now" iconURL={arrowRight} />
-
-                <div className="flex justify-start items-start flex-wrap w-full mt-4 gap-16">
+                <div className="hidden xl:flex justify-start items-start flex-wrap w-full mt-4 gap-16">
                     {statistics.map((stat, index) => (
                         <div key={index}>
                             <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
@@ -34,16 +43,18 @@ const WelcomeBanner = () => {
                 </div>
             </div>
 
-            <div className="relative flex-1 flex justify-center items-center xl:min-h-screen bg-primary bg-hero bg-cover bg-center">
-                <AnimatedImage src={bigPhoneImg} alt="shoe collection" width={610} height={502} />
+            <div className="relative flex-1 flex-col flex w-full items-center min-h-[800px] max-h-[1200px] lg:min-h-svh lg:max-h-svh bg-hero">
+                <div className="flex flex-col mt-20 w-full">
+                    <AnimatedImage src={phoneSelected?.bigPhone} alt="phone collection" title={phoneSelected.title} bannerStats={phoneSelected.bannerStats} />
+                </div>
 
-                <div className="flex sm:gap-6 gap-4 absolute bottom-[5%] justify-between max-sm:px-6">
-                    {phoneDeals.map((deal, index) => (
+                <div className="flex gap-4 md:gap-6 absolute bottom-[5%] justify-between max-sm:px-6">
+                    {phoneDeals.map((phone, index) => (
                         <div key={index}>
                             <PhoneDealCard
-                                imgURL={deal}
-                                changeBigPhoneImage={(deal) => setBigPhoneImg(deal)}
-                                bigPhoneImg={bigPhoneImg}
+                                phone={phone}
+                                setPhoneSelected={setPhoneSelected}
+                                phoneSelected={phoneSelected}
                             />
                         </div>
                     ))}

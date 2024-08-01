@@ -21,6 +21,10 @@ import ram1 from './ram_1.png';
 import phone1 from './phone_1.png';
 import desktop1 from './desktop_1.png';
 
+import s22 from './s22.png'
+import iPhoneXR from './iPhoneXR.png'
+import iPhone14 from './iPhone14.png'
+
 export {
     customer1,
     customer2,
@@ -38,4 +42,7 @@ export {
     gCard1,
     phone1,
     desktop1,
+    s22,
+    iPhoneXR,
+    iPhone14,
 };
