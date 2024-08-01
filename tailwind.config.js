@@ -29,8 +29,8 @@ export default {
                 '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)',
             },
             backgroundImage: {
-                hero: "url('assets/images/collection-background.svg')",
-                card: "url('assets/images/thumbnail-background.svg')",
+                hero: "url('assets/images/logos_graphics/collection-background.svg')",
+                card: "url('assets/images/logos_graphics/thumbnail-background.svg')",
             },
             screens: {
                 wide: '1440px',

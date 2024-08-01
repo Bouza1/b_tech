@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { phoneDeals, statistics } from '../constants';
-import { arrowRight } from '../assets/icons';
-import { BigButton, AnimatedImage, PhoneDealCard } from "../components";
+import { phoneDeals, statistics } from '../../constants';
+import { arrowRight } from '../../assets/icons';
+import { BigButton, AnimatedImage, PhoneDealCard } from '../../components';
 
 export interface Phone {
     thumbnail: string;
@@ -45,7 +45,12 @@ const WelcomeBanner = () => {
 
             <div className="relative flex-1 flex-col flex w-full items-center min-h-[800px] max-h-[1200px] lg:min-h-svh lg:max-h-svh bg-hero">
                 <div className="flex flex-col mt-20 w-full">
-                    <AnimatedImage src={phoneSelected?.bigPhone} alt="phone collection" title={phoneSelected.title} bannerStats={phoneSelected.bannerStats} />
+                    <AnimatedImage
+                        src={phoneSelected?.bigPhone}
+                        alt="phone collection"
+                        title={phoneSelected.title}
+                        bannerStats={phoneSelected.bannerStats}
+                    />
                 </div>
 
                 <div className="flex gap-4 md:gap-6 absolute bottom-[5%] justify-between max-sm:px-6">

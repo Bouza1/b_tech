@@ -11,9 +11,7 @@ const BigButton = ({ label, iconURL, onClick }: Props) => {
             onClick={onClick}
         >
             {label}
-            {iconURL && (
-                <img src={iconURL} alt="arrow right" className="w-8 h-8" />
-            )}
+            {iconURL && <img src={iconURL} alt="arrow right" className="w-8 h-8" />}
         </button>
     );
 };

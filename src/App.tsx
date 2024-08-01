@@ -1,8 +1,8 @@
 import './App.css';
 import { NavBar, Section } from './components';
 import { PopularProducts, RefurbishedDevices, WelcomeBanner } from './sections';
-import TeamProfile from './sections/TeamProfileCard.tsx';
-import AboutUs from './sections/AboutUs.tsx';
+import TeamProfile from './sections/AboutUs/TeamProfileCard.tsx';
+import AboutUs from './sections/AboutUs/AboutUs.tsx';
 
 function App() {
     return (
@@ -13,10 +13,10 @@ function App() {
                     <WelcomeBanner />
                 </Section>
                 <Section id={'products'} dynamicResize={true}>
-                    <PopularProducts/>
+                    <PopularProducts />
                 </Section>
                 <Section id={'about-us'} dynamicResize={false}>
-                    <AboutUs/>
+                    <AboutUs />
                 </Section>
                 <Section id={'repairs'}>
                     <p>4: Repairs</p>

@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link as ScrollLink } from 'react-scroll';
-import { logoHQ } from '../assets/images';
-import { navLinks } from '../constants';
+import { logoHQ } from '../../assets/images/logos_graphics';
+import { navLinks } from '../../constants';
 
 export type NavLink = {
     name: string;
     href: string;
     current: boolean;
 };
-
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
@@ -43,13 +42,13 @@ const NavBar = () => {
                     </div>
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <a href="/">
+                            <a href="/public">
                                 <img src={logoHQ} alt="Logo" width={200} height={80} />
                             </a>
                         </div>
                     </div>
                     <div className="hidden md:flex md:items-center flex-1">
-                        <div className={"w-2/6"}></div>
+                        <div className={'w-2/6'}></div>
                         <div className="flex items-center space-x-4">
                             {navLinks.map((item: NavLink) => (
                                 <ScrollLink
