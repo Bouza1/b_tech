@@ -14,7 +14,7 @@ const WelcomeBanner = () => {
     const [phoneSelected, setPhoneSelected] = useState<Phone>(phoneDeals[0]);
 
     return (
-        <div className="flex xl:flex-row flex-col justify-center mt-10 ml-20 text-left">
+        <div className="flex xl:flex-row flex-col justify-center text-left">
             <div className="xl:w-2/5 flex flex-col justify-center items-start md:w-full">
                 <h1 className="mt-6 font-palanquin text-4xl lg:text-8xl z-30 font-bold">
                     New Arrivals

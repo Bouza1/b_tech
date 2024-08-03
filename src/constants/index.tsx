@@ -10,6 +10,7 @@ import { gCardGigaByte8GB, ramDominatorPlatinumRGB } from '../assets/images/comp
 import { NavLink } from '../components/Misc/NavBar.tsx';
 import { desktop1 } from '../assets/images/computers';
 import { Staff } from '../sections/AboutUs/TeamProfileCard.tsx';
+import { daveHeadshot, joshHeadshot } from '../assets/images/headshots';
 
 export const navLinks: NavLink[] = [
     { name: 'Home', href: 'home', current: true },
@@ -84,15 +85,17 @@ export const specialOffers = [
 export const staff: Staff[] = [
     {
         name: 'David Bousfield',
-        job: 'CEO - Lead Technician',
+        job: 'Lead Technician',
         linkedin: '#',
         email: 'email@email.com',
+        photo:daveHeadshot,
     },
     {
         name: 'Joshua Bousfield',
         job: 'Software Engineer',
         linkedin: '#',
         email: 'email@email.com',
+        photo:joshHeadshot,
     },
 ]
 
@@ -123,3 +126,16 @@ export const services = [
         href: '/chat',
     },
 ];
+
+type category = {
+    name:string;
+}
+
+export const categories: category[] = [
+    {name:'Computers'},
+    {name:'Hardware'},
+    {name:'Mobile Phones'},
+    {name:'Accessories'}
+]
+
+export const STR_PROB_ISSUES = "Please give a brief description of the problems/issues you are facing and a member of the team will be in touch shortly."

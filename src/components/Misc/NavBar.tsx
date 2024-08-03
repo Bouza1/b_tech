@@ -58,7 +58,7 @@ const NavBar = () => {
                                     duration={500}
                                     spy={true}
                                     exact="true"
-                                    offset={-70}
+                                    offset={-20}
                                     className={classNames(
                                         current === item.name
                                             ? 'border-b-4 border-b-blue-600 text-blue-600'
