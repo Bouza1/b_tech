@@ -1,13 +1,13 @@
 export interface Staff {
     name: string;
     job: string;
-    github?:string;
-    email:string;
-    linkedin:string;
-    photo:string;
+    github?: string;
+    email: string;
+    linkedin: string;
+    photo: string;
 }
 
-const TeamProfileCard = (staff:Staff) => {
+const TeamProfileCard = (staff: Staff) => {
     return (
         <div className="flex flex-col justify-center max-w-xs p-6 shadow-2xl rounded-xl sm:px-12 bg-gray-300 hover:wiggle">
             <img
@@ -18,14 +18,12 @@ const TeamProfileCard = (staff:Staff) => {
             <div className="space-y-4 text-center divide-y divide-blue-500">
                 <div className="my-2 space-y-1">
                     <h2 className="text-xl font-semibold sm:text-2xl">{staff.name}</h2>
-                    <p className="px-5 text-xs sm:text-base  text-gray-800">
-                        {staff.job}
-                    </p>
+                    <p className="px-5 text-xs sm:text-base  text-gray-800">{staff.job}</p>
                 </div>
                 <div className="flex justify-center pt-2 space-x-4 align-center">
                     <a
                         rel="noopener noreferrer"
-                        href={staff.github ? staff.github : "#"}
+                        href={staff.github ? staff.github : '#'}
                         aria-label="GitHub"
                         className="p-2 rounded-md hover:text-blue-500"
                     >

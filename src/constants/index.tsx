@@ -88,16 +88,16 @@ export const staff: Staff[] = [
         job: 'Lead Technician',
         linkedin: '#',
         email: 'email@email.com',
-        photo:daveHeadshot,
+        photo: daveHeadshot,
     },
     {
         name: 'Joshua Bousfield',
         job: 'Software Engineer',
         linkedin: '#',
         email: 'email@email.com',
-        photo:joshHeadshot,
+        photo: joshHeadshot,
     },
-]
+];
 
 export const services = [
     {
@@ -128,14 +128,15 @@ export const services = [
 ];
 
 type category = {
-    name:string;
-}
+    name: string;
+};
 
 export const categories: category[] = [
-    {name:'Computers'},
-    {name:'Hardware'},
-    {name:'Mobile Phones'},
-    {name:'Accessories'}
-]
+    { name: 'Computers' },
+    { name: 'Hardware' },
+    { name: 'Mobile Phones' },
+    { name: 'Accessories' },
+];
 
-export const STR_PROB_ISSUES = "Please give a brief description of the problems/issues you are facing and a member of the team will be in touch shortly."
+export const STR_PROB_ISSUES =
+    'Please give a brief description of the problems/issues you are facing and a member of the team will be in touch shortly.';

@@ -32,7 +32,7 @@ const PopularProducts = () => {
 
             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
                 {specialOffers.map((product, index) => (
-                    <ProductCard key={product.name} {...product} below1={(index <= 1)} />
+                    <ProductCard key={product.name} {...product} below1={index <= 1} />
                 ))}
             </div>
             <motion.div
@@ -51,7 +51,8 @@ const PopularProducts = () => {
                         duration: 0.5,
                     },
                 }}
-                viewport={{ once: false }}>
+                viewport={{ once: false }}
+            >
                 <div className="text-right">
                     <h2 className="text-8xl font-palanquin font-bold">
                         Shop <span className="text-blue-500"> More</span>
@@ -60,7 +61,9 @@ const PopularProducts = () => {
             </motion.div>
 
             <motion.div
-                className={'mt-7 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14'}
+                className={
+                    'mt-7 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14'
+                }
                 initial={{
                     opacity: 0,
                     x: 0,

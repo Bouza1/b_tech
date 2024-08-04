@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 const RefurbishedDevices = () => {
     return (
         <div className="flex flex-row">
-
             <motion.div
                 className="flex-1 flex flex-col gap-5 justify-center items-center"
                 initial={{
@@ -23,8 +22,7 @@ const RefurbishedDevices = () => {
                 }}
                 viewport={{ once: false }}
             >
-                <div
-                    className="flex flex-1 flex-col p-7 rounded-3xl shadow-2xl gap-3 bg-primary bg-hero bg-cover bg-center w-full">
+                <div className="flex flex-1 flex-col p-7 rounded-3xl shadow-2xl gap-3 bg-primary bg-hero bg-cover bg-center w-full">
                     <div className="flex flex-1 justify-center items-center">
                         <h2 className="font-palanquin text-8xl text-blue-500 capitalize font-bold">
                             472<span className="font-montserrat font-bold text-2xl">M</span>

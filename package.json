@@ -21,6 +21,7 @@
     "devDependencies": {
         "@headlessui/react": "^2.1.2",
         "@heroicons/react": "^2.1.5",
+        "@material-tailwind/react": "^2.1.9",
         "@testing-library/jest-dom": "^6.4.8",
         "@testing-library/react": "^16.0.0",
         "@types/jest": "^29.5.12",

@@ -3,8 +3,8 @@ import { staff } from '../../constants';
 import { TeamProfileCard } from './index.tsx';
 
 const MeetTheTeam = () => {
-    return(
-        <div className='flex flex-col'>
+    return (
+        <div className="flex flex-col">
             <motion.div
                 className=""
                 initial={{
@@ -29,7 +29,6 @@ const MeetTheTeam = () => {
                 </h2>
             </motion.div>
 
-
             <div className="relative flex w-full">
                 <motion.div
                     className="flex absolute w-full h-full bg-triangle"
@@ -49,9 +48,7 @@ const MeetTheTeam = () => {
                         },
                     }}
                     viewport={{ once: false }}
-                >
-
-                </motion.div>
+                ></motion.div>
                 <div className="flex flex-row relative justify-evenly w-full">
                     {staff.map((staff, i) => (
                         <TeamProfileCard
@@ -64,12 +61,9 @@ const MeetTheTeam = () => {
                         />
                     ))}
                 </div>
-
             </div>
-
         </div>
+    );
+};
 
-    )
-}
-
-export default MeetTheTeam
+export default MeetTheTeam;

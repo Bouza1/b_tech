@@ -8,11 +8,19 @@ interface ProductCardProps {
     oldPrice: string;
     savings: string;
     tags: string[];
-    below1?: boolean
+    below1?: boolean;
 }
 
-const ProductCard = ({ imgURL, name, newPrice, oldPrice, savings, tags, below1 }: ProductCardProps) => {
-    console.log(below1)
+const ProductCard = ({
+    imgURL,
+    name,
+    newPrice,
+    oldPrice,
+    savings,
+    tags,
+    below1,
+}: ProductCardProps) => {
+    console.log(below1);
     return (
         <motion.div
             className="flex flex-1 flex-col w-full max-sm:w-full shadow-3xl rounded-xl p-2 border-2 hover:shadow-xl cursor-pointer duration-200"
@@ -31,7 +39,6 @@ const ProductCard = ({ imgURL, name, newPrice, oldPrice, savings, tags, below1 }
                 },
             }}
             viewport={{ once: false }}
-
         >
             <img
                 className="object-cover rounded-tl-lg rounded-tr-lg bg-card p-2 "

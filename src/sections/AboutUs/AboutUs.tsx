@@ -1,5 +1,5 @@
-import { RefurbishedDevices, MeetTheTeam  } from './index.tsx';
-import { } from './index.tsx';
+import { RefurbishedDevices, MeetTheTeam } from './index.tsx';
+import {} from './index.tsx';
 
 const AboutUs = () => {
     return (
