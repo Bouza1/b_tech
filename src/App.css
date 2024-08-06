@@ -5,6 +5,7 @@ main {
     text-align: center;
 }
 
+
 @keyframes wiggle {
     0%,
     100% {
@@ -38,14 +39,11 @@ main {
     height: 100%;
 }
 
-button {
-    font-family: 'Ubuntu', sans-serif;
+.animate_button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 170px;
-    height: 60px;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -57,8 +55,7 @@ button {
     transition: all 0.35s;
 }
 
-
-button span {
+.animate_button span {
     opacity: 1;
     visibility: visible;
     transition: all 0.35s;
@@ -85,12 +82,12 @@ button span {
     transition: all 0.35s;
 }
 
-button.is_active {
+.animate_button.is_active {
     width: 80px;
     height: 80px;
 }
 
-button.is_active .success {
+.animate_button.is_active .success {
     opacity: 1;
     visibility: visible;
 }
@@ -103,4 +100,23 @@ button.is_active .success svg {
 button.is_active span {
     opacity: 0;
     visibility: hidden;
+}
+
+canvas{
+    flex:1;
+    width:100%;
+    height:100%;
+}
+
+
+.gray {
+    color: #ff3dca
+}
+
+.gray {
+    color:#1F2937
+}
+
+.blue{
+    color:#3B82F6
 }

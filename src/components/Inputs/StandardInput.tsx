@@ -10,7 +10,7 @@ interface Props {
     options?: string[];
 }
 
-const StandardInput = ({ type, label, id, placeholder, value, setValue, options }: Props) => {
+const  StandardInput = ({ type, label, id, placeholder, value, setValue, options }: Props) => {
     return (
         <div className="flex flex-row items-center">
             <div className="flex w-1/3 justify-center">
@@ -27,7 +27,7 @@ const StandardInput = ({ type, label, id, placeholder, value, setValue, options 
                         type={type}
                         id={`input_${id}`}
                         aria-describedby={`Input for ${label}`}
-                        className="bg-gray-800 border border-gray-300 text-white rounded-lg block w-full p-2.5 focus:bg-white focus:text-gray-800"
+                        className="bg-white text-gray-800 rounded-lg border-2 border-gray-800 block w-full p-2.5 focus:bg-white focus:text-gray-800 autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] autofill:text-md autofill:text-gray-800"
                         placeholder={placeholder}
                         required
                         value={value}
@@ -38,7 +38,7 @@ const StandardInput = ({ type, label, id, placeholder, value, setValue, options 
                 {type === 'select' && (
                     <select
                         className={
-                            'bg-gray-800 border border-gray-300 text-white rounded-lg block w-full p-2.5 focus:bg-white focus:text-gray-800'
+                            'bg-white border-2 border-gray-800 text-gray-800 rounded-lg block w-full p-2.5 focus:bg-white focus:text-gray-800'
                         }
                         name="mould_select"
                         id="mould_select"

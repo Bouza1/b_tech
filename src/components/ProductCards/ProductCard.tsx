@@ -41,13 +41,13 @@ const ProductCard = ({
             viewport={{ once: false }}
         >
             <img
-                className="object-cover rounded-tl-lg rounded-tr-lg bg-card p-2 "
+                className="bg-cover rounded-tl-lg rounded-tr-lg bg-card p-2 "
                 src={imgURL}
                 alt={name}
             />
 
-            <div className="flex flex-1 flex-col mt-2  justify-between">
-                <h3 className="text-lg font-sans">{name}</h3>
+            <div className="flex flex-1 flex-col mt-2 justify-between">
+                <h3 className="text-lg font-sans text-left">{name}</h3>
                 <div className="flex flex-wrap gap-1.5">
                     {tags.map((tag) => (
                         <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">

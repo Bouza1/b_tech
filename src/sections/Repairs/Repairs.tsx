@@ -1,5 +1,4 @@
 import RepairForm from './RepairForm.tsx';
-import { RepairInstructions } from './index.tsx';
 
 const Repairs = () => {
     return (
@@ -17,21 +16,20 @@ const Repairs = () => {
                     in Dorset.
                 </p>
             </div>
-            <div className="flex flex-col justify-center">
-                <div className="flex w-full justify-end mt-3">
-                    <h2 className="text-8xl font-palanquin font-bold">
-                        Book Your <span className="text-blue-500"> Repair</span>
-                    </h2>
-                </div>
-                <div className="flex flex-row w-full">
-                    <div className="w-1/3 p-7">
-                        <RepairInstructions/>
+            <div className="flex flex-col justify-center gap-3">
+                <div className="flex flex-row w-full gap-5">
+                    <div className="w-1/3 rounded-2xl bg-brokenCompBanner bg-cover hover:bg-brokenPhoneBanner">
+
                     </div>
-                    <div className="w-2/3 p-7">
+                    <div className="w-2/3">
+                        <div className="flex w-full justify-center">
+                            <h2 className="text-8xl font-palanquin font-bold">
+                                Book One <span className="text-blue-500"> Now</span>
+                            </h2>
+                        </div>
                         <RepairForm />
                     </div>
                 </div>
-
             </div>
         </div>
     );

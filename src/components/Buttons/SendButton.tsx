@@ -10,16 +10,14 @@ const SendButton = () => {
     };
     return (
         <div className="wrapper">
-
             <button
                 type="button"
-                className={animate ? 'is_active' : 'font-montserrat border-3 border-gray-800 rounded-lg'}
+                className={`animate_button ${animate ? 'is_active' : 'rounded-lg border-4 py-2 px-7 font-montserrat'}`}
                 onClick={() => animateButton()}
             >
                 <span>Submit</span>
                 <div className="success bg-blue-400 rounded-full flex justify-center items-center text-white">
-                    <PaperAirplaneIcon className="size-14 text-white"/>
-
+                    <PaperAirplaneIcon className="size-14 text-white" />
                 </div>
             </button>
         </div>
