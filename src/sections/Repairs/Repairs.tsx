@@ -18,9 +18,7 @@ const Repairs = () => {
             </div>
             <div className="flex flex-col justify-center gap-3">
                 <div className="flex flex-row w-full gap-5">
-                    <div className="w-1/3 rounded-2xl bg-brokenCompBanner bg-cover hover:bg-brokenPhoneBanner">
-
-                    </div>
+                    <div className="w-1/3 rounded-2xl bg-brokenCompBanner bg-cover hover:bg-brokenPhoneBanner"></div>
                     <div className="w-2/3">
                         <div className="flex w-full justify-center">
                             <h2 className="text-8xl font-palanquin font-bold">

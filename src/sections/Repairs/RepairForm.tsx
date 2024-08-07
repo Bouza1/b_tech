@@ -14,7 +14,6 @@ import SectionButton from '../../components/Buttons/SectionButton.tsx';
 import { MdOutlineEmail, MdOutlineMessage, MdWhatsapp } from 'react-icons/md';
 
 const RepairForm = () => {
-
     // Section 1
     const [fullName, setFullName] = useState('');
     const [contactNumber, setContactNumber] = useState('');
@@ -40,7 +39,7 @@ const RepairForm = () => {
     const [showSection4, setShowSection4] = useState(false);
 
     // Section 5
-    const [showSection5, setShowSection5] = useState(false)
+    const [showSection5, setShowSection5] = useState(false);
 
     useEffect(() => {
         const isValidFullName = fullName.trim().length > 0;
@@ -57,26 +56,32 @@ const RepairForm = () => {
 
         const isValidIssues = issuesDescription.length > 0;
 
-        const isValidPrefs = prefMethod != ""
+        const isValidPrefs = prefMethod != '';
 
         setIsSection1Valid(isValidFullName && isValidContactNumber && isValidEmail);
-        setIsSection2Valid(
-            isValidDeviceType && isValidDeviceBrand && isValidDeviceModel,
-        );
+        setIsSection2Valid(isValidDeviceType && isValidDeviceBrand && isValidDeviceModel);
         setIsSection3Valid(isValidIssues);
-        setIsSection4Valid(isValidPrefs)
-    }, [fullName, contactNumber, email, deviceType, deviceBrand, deviceModel, issuesDescription.length, prefMethod]);
+        setIsSection4Valid(isValidPrefs);
+    }, [
+        fullName,
+        contactNumber,
+        email,
+        deviceType,
+        deviceBrand,
+        deviceModel,
+        issuesDescription.length,
+        prefMethod,
+    ]);
 
     const handleNextSectionClick = () => {
         const sectionsValid = [showSection1, showSection2, showSection3, showSection4];
         const isSectionValid = [isSection1Valid, isSection2Valid, isSection3Valid, isSection4Valid];
         const currentSection = sectionsValid.findIndex((item) => item);
-        if(isSectionValid[currentSection]) {
-            handleSectionVisibility(currentSection <= 4 ? currentSection+1 : currentSection);
-            console.log(currentSection)
+        if (isSectionValid[currentSection]) {
+            handleSectionVisibility(currentSection <= 4 ? currentSection + 1 : currentSection);
+            console.log(currentSection);
         }
-
-    }
+    };
 
     const handleSectionVisibility = (section: number) => {
         setShowSection1(section === 0);
@@ -88,9 +93,7 @@ const RepairForm = () => {
 
     return (
         <div className="flex flex-col h-[440px] gap-4 items-center rounded-2xl">
-            <div
-                className="rounded-2xl flex flex-col shadow-2xl bg-hero bg-cover gap-3 w-full p-7 h-full justify-between">
-
+            <div className="rounded-2xl flex flex-col shadow-2xl bg-hero bg-cover gap-3 w-full p-7 h-full justify-between">
                 <div className="flex w-full justify-evenly flex-row">
                     <SectionButton
                         isValid={isSection1Valid}
@@ -147,7 +150,11 @@ const RepairForm = () => {
                 </div>
                 <form className="flex flex-col h-full">
                     {showSection1 && (
-                        <FormSection leading={"Please provide your personal details so we can accurately identify and assist you with your specific needs."}>
+                        <FormSection
+                            leading={
+                                'Please provide your personal details so we can accurately identify and assist you with your specific needs.'
+                            }
+                        >
                             <StandardInput
                                 type={'text'}
                                 label={'Full Name'}
@@ -175,7 +182,11 @@ const RepairForm = () => {
                         </FormSection>
                     )}
                     {showSection2 && (
-                        <FormSection leading={"Share the details of your device to ensure we have all the necessary information to diagnose and address any issues."}>
+                        <FormSection
+                            leading={
+                                'Share the details of your device to ensure we have all the necessary information to diagnose and address any issues.'
+                            }
+                        >
                             <StandardInput
                                 type={'select'}
                                 label={'Device Type'}
@@ -204,29 +215,45 @@ const RepairForm = () => {
                         </FormSection>
                     )}
                     {showSection3 && (
-                        <FormSection leading={"Describe the issues or problems you are experiencing in as much detail as possible."}>
+                        <FormSection
+                            leading={
+                                'Describe the issues or problems you are experiencing in as much detail as possible.'
+                            }
+                        >
                             <TextArea value={issuesDescription} setValue={setIssuesDescription} />
                         </FormSection>
                     )}
                     {showSection4 && (
                         <>
-                            <FormSection leading={"Let us know your contact preferences so we can reach out to you in the most convenient way."}>
-
+                            <FormSection
+                                leading={
+                                    'Let us know your contact preferences so we can reach out to you in the most convenient way.'
+                                }
+                            >
                                 <div className="flex flex-col w-full h-full justify-evenly">
-
                                     <div className="flex flex-row w-full justify-evenly">
-
                                         <div
                                             className={`cursor-pointer`}
                                             onClick={() => setPrefMethod('email')}
                                         >
-
                                             <div
-                                                className={`rounded-full border-4 px-5 py-2 ${prefMethod === 'email' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}>
-                                                {<MdOutlineEmail size={84}
-                                                                 color={prefMethod === 'email' ? '#ffffff' : '#1F2C37'} />}
+                                                className={`rounded-full border-4 px-5 py-2 ${prefMethod === 'email' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}
+                                            >
+                                                {
+                                                    <MdOutlineEmail
+                                                        size={84}
+                                                        color={
+                                                            prefMethod === 'email'
+                                                                ? '#ffffff'
+                                                                : '#1F2C37'
+                                                        }
+                                                    />
+                                                }
                                                 <label
-                                                    className={`font-montserrat ${prefMethod === 'email' ? 'text-white' : 'text-gray-800'} text-center text-lg`}>Email</label>
+                                                    className={`font-montserrat ${prefMethod === 'email' ? 'text-white' : 'text-gray-800'} text-center text-lg`}
+                                                >
+                                                    Email
+                                                </label>
                                             </div>
                                         </div>
 
@@ -235,13 +262,24 @@ const RepairForm = () => {
                                             onClick={() => setPrefMethod('text')}
                                         >
                                             <div
-                                                className={`rounded-full border-4 px-5 py-2 ${prefMethod === 'text' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}>
-                                                {<MdOutlineMessage size={84}
-                                                                   color={prefMethod === 'text' ? '#ffffff' : '#1F2C37'} />}
+                                                className={`rounded-full border-4 px-5 py-2 ${prefMethod === 'text' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}
+                                            >
+                                                {
+                                                    <MdOutlineMessage
+                                                        size={84}
+                                                        color={
+                                                            prefMethod === 'text'
+                                                                ? '#ffffff'
+                                                                : '#1F2C37'
+                                                        }
+                                                    />
+                                                }
                                                 <label
-                                                    className={`font-montserrat ${prefMethod === 'text' ? 'text-white' : 'text-gray-800'} text-center text-lg`}>Text</label>
+                                                    className={`font-montserrat ${prefMethod === 'text' ? 'text-white' : 'text-gray-800'} text-center text-lg`}
+                                                >
+                                                    Text
+                                                </label>
                                             </div>
-
                                         </div>
 
                                         <div
@@ -249,35 +287,43 @@ const RepairForm = () => {
                                             onClick={() => setPrefMethod('whatsapp')}
                                         >
                                             <div
-                                                className={`rounded-full border-4 px-7 py-4 ${prefMethod === 'whatsapp' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}>
-                                                {<MdWhatsapp size={84}
-                                                                   color={prefMethod === 'whatsapp' ? '#ffffff' : '#1F2C37'} />}
+                                                className={`rounded-full border-4 px-7 py-4 ${prefMethod === 'whatsapp' ? 'bg-blue-500 border-gray-800 shadow-2xl' : 'border-transparent'}`}
+                                            >
+                                                {
+                                                    <MdWhatsapp
+                                                        size={84}
+                                                        color={
+                                                            prefMethod === 'whatsapp'
+                                                                ? '#ffffff'
+                                                                : '#1F2C37'
+                                                        }
+                                                    />
+                                                }
                                                 <label
-                                                    className={`font-montserrat ${prefMethod === 'whatsapp' ? 'text-white' : 'text-gray-800'} text-center text-lg`}>Whatsapp</label>
+                                                    className={`font-montserrat ${prefMethod === 'whatsapp' ? 'text-white' : 'text-gray-800'} text-center text-lg`}
+                                                >
+                                                    Whatsapp
+                                                </label>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </FormSection>
                         </>
                     )}
-                    {showSection5 &&
-                        <SendButton/>
-                    }
+                    {showSection5 && <SendButton />}
                 </form>
 
-
-                {!showSection5 &&
+                {!showSection5 && (
                     <div>
                         <button
                             className="rounded-lg text-2xl font-palanquin hover:bg-blue-500 cursor-pointer border-2 border-gray-800 py-2 px-7"
                             onClick={handleNextSectionClick}
-                        >Next
+                        >
+                            Next
                         </button>
                     </div>
-                }
-
+                )}
             </div>
         </div>
     );

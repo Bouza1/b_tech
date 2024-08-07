@@ -1,8 +1,7 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 import { phoneIPhoneXR } from '../../assets/images/phones';
 
 const LavaLamp = () => {
-
     useEffect(() => {
         const script = document.createElement('script');
         script.innerHTML = `
@@ -272,9 +271,15 @@ const LavaLamp = () => {
 
     return (
         <div className="relative w-full h-[545px] rounded-2xl">
-            <canvas id="lamp-anim" className="absolute top-0 left-0 w-full h-full rounded-2xl"></canvas>
-            <img src={phoneIPhoneXR} alt="Phone"
-                 className="absolute inset-0 m-auto max-w-full max-h-full object-contain" />
+            <canvas
+                id="lamp-anim"
+                className="absolute top-0 left-0 w-full h-full rounded-2xl"
+            ></canvas>
+            <img
+                src={phoneIPhoneXR}
+                alt="Phone"
+                className="absolute inset-0 m-auto max-w-full max-h-full object-contain"
+            />
         </div>
     );
 };

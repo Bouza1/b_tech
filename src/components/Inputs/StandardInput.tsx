@@ -10,7 +10,7 @@ interface Props {
     options?: string[];
 }
 
-const  StandardInput = ({ type, label, id, placeholder, value, setValue, options }: Props) => {
+const StandardInput = ({ type, label, id, placeholder, value, setValue, options }: Props) => {
     return (
         <div className="flex flex-row items-center">
             <div className="flex w-1/3 justify-center">

@@ -1,6 +1,7 @@
 import './App.css';
 import { NavBar, Section } from './components';
 import { AboutUs, PopularProducts, Repairs, WelcomeBanner } from './sections';
+import News from './sections/News/News.tsx';
 
 function App() {
     return (
@@ -19,7 +20,9 @@ function App() {
                 <Section id={'repairs'}>
                     <Repairs />
                 </Section>
-                <Section id={'news'}>5: News</Section>
+                <Section id={'news'}>
+                    <News/>
+                </Section>
             </main>
         </>
     );
