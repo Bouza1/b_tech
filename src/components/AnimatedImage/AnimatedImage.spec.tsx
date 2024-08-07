@@ -24,7 +24,7 @@ describe('AnimatedImage', () => {
         const title = 'Test Title';
         render(<AnimatedImage src="test.jpg" alt="test image" title={title} />);
 
-        const titleElement = screen.getByText(title.substring(0, title.length-2));
+        const titleElement = screen.getByText(title.substring(0, title.length - 2));
         expect(titleElement).toBeInTheDocument();
         const subTitleElement = screen.getByText(/le$/);
         expect(subTitleElement).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('AnimatedImage', () => {
         const bannerStats = ['Stat 1', 'Stat 2', 'Stat 3'];
         render(<AnimatedImage src="test.jpg" alt="test image" bannerStats={bannerStats} />);
 
-        bannerStats.forEach(stat => {
+        bannerStats.forEach((stat) => {
             const statElement = screen.getByText(stat);
             expect(statElement).toBeInTheDocument();
         });

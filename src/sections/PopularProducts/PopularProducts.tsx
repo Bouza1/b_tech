@@ -1,18 +1,16 @@
 import { motion } from 'framer-motion';
-import { arrowRight } from '../../assets/icons';
-import BigButton from '../../components/Buttons/BigButton.tsx';
-import { specialOffers } from '../../constants';
+import { categories, specialOffers } from '../../constants';
 import { ProductCard } from '../../components';
 
 const PopularProducts = () => {
     return (
-        <div className="flex flex-col justify-center gap-5 pb-5">
+        <div className="flex flex-col justify-center gap-5">
             <motion.div
-                className="flex flex-col gap-5"
+                className="flex flex-col"
                 initial={{
                     opacity: 0,
                     x: 0,
-                    y: 20,
+                    y: -100,
                 }}
                 whileInView={{
                     opacity: 1,
@@ -20,7 +18,7 @@ const PopularProducts = () => {
                     y: 0,
                     transition: {
                         type: 'tween',
-                        duration: 0.8,
+                        duration: 0.5,
                     },
                 }}
                 viewport={{ once: false }}
@@ -29,22 +27,65 @@ const PopularProducts = () => {
                     <h2 className="text-8xl font-palanquin font-bold">
                         Popular <span className="text-blue-500"> Products</span>
                     </h2>
-                    <p className="mt-2 font-montserrat text-slate-gray">
-                        Experience top-notch quality and style with our sought-after selections.
-                        Discover a world of comfort, design and value.
-                    </p>
                 </div>
             </motion.div>
 
-            <div className="mt-7 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
-                {specialOffers.map((product) => (
-                    <ProductCard key={product.name} {...product} />
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
+                {specialOffers.map((product, index) => (
+                    <ProductCard key={product.name} {...product} below1={index <= 1} />
                 ))}
             </div>
+            <motion.div
+                className="flex flex-1 flex-col w-full"
+                initial={{
+                    opacity: 0,
+                    x: 70,
+                    y: 0,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: {
+                        type: 'tween',
+                        duration: 0.5,
+                    },
+                }}
+                viewport={{ once: false }}
+            >
+                <div className="text-right">
+                    <h2 className="text-8xl font-palanquin font-bold">
+                        Shop <span className="text-blue-500"> More</span>
+                    </h2>
+                </div>
+            </motion.div>
 
-            <div className="mt-9 flex justify-center items-center">
-                <BigButton label="Shop More" iconURL={arrowRight} />
-            </div>
+            <motion.div
+                className={
+                    'mt-7 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14'
+                }
+                initial={{
+                    opacity: 0,
+                    x: 0,
+                    y: 70,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    transition: {
+                        type: 'tween',
+                        duration: 0.5,
+                    },
+                }}
+                viewport={{ once: false }}
+            >
+                {categories.map((category) => (
+                    <div className="rounded-lg bg-blue-500 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer">
+                        {category.name}
+                    </div>
+                ))}
+            </motion.div>
         </div>
     );
 };

@@ -1,25 +1,27 @@
 import './App.css';
 import { NavBar, Section } from './components';
-import { PopularProducts, RefurbishedDevices, WelcomeBanner } from './sections';
-import TeamProfile from './sections/AboutUs/TeamProfileCard.tsx';
-import AboutUs from './sections/AboutUs/AboutUs.tsx';
+import { AboutUs, PopularProducts, Repairs, WelcomeBanner } from './sections';
+import News from './sections/News/News.tsx';
 
 function App() {
     return (
         <>
             <NavBar />
             <main>
-                <Section id={'home'} dynamicResize={true}>
+                <Section id={'home'}>
                     <WelcomeBanner />
                 </Section>
-                <Section id={'products'} dynamicResize={true}>
+                <Section id={'products'}>
                     <PopularProducts />
                 </Section>
-                <Section id={'about-us'} dynamicResize={false}>
+                <Section id={'about-us'}>
                     <AboutUs />
                 </Section>
                 <Section id={'repairs'}>
-                    <p>4: Repairs</p>
+                    <Repairs />
+                </Section>
+                <Section id={'news'}>
+                    <News/>
                 </Section>
             </main>
         </>

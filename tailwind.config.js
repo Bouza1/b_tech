@@ -31,6 +31,9 @@ export default {
             backgroundImage: {
                 hero: "url('assets/images/logos_graphics/collection-background.svg')",
                 card: "url('assets/images/logos_graphics/thumbnail-background.svg')",
+                triangle: "url('assets/images/logos_graphics/triangle.svg')",
+                brokenCompBanner: "url('assets/images/logos_graphics/repair_comp_banner.svg')",
+                brokenPhoneBanner: "url('assets/images/logos_graphics/repair_phone_banner.svg')",
             },
             screens: {
                 wide: '1440px',
