@@ -14,6 +14,12 @@ export default {
             '8xl': ['96px', '106px'],
         },
         extend: {
+            perspective: {
+                '700': '700px',
+            },
+            transformOrigin: {
+                'center-center': 'center center',
+            },
             fontFamily: {
                 palanquin: ['Palanquin', 'sans-serif'],
                 montserrat: ['Montserrat', 'sans-serif'],
@@ -34,6 +40,7 @@ export default {
                 triangle: "url('assets/images/logos_graphics/triangle.svg')",
                 brokenCompBanner: "url('assets/images/logos_graphics/repair_comp_banner.svg')",
                 brokenPhoneBanner: "url('assets/images/logos_graphics/repair_phone_banner.svg')",
+                blueDiv: "url('assets/images/logos_graphics/blue_banner.svg')",
             },
             screens: {
                 wide: '1440px',

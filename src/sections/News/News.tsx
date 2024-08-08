@@ -1,11 +1,9 @@
 import { NewsArticles } from '../../constants';
-import NewsCard from './NewsCard.tsx';
-
+import { NewsCard, SignupNews } from './index.tsx';
 
 const News = () => {
-
     return (
-        <div className="flex flex-col justify-center gap-3">
+        <div className="flex flex-col justify-center gap-4">
             <div className="flex w-full h-full flex-row items-center justify-between">
                 <h2 className="text-8xl text-left font-palanquin font-bold">
                     Latest <span className="text-blue-500"> News</span>
@@ -17,17 +15,17 @@ const News = () => {
                 </div>
             </div>
             <div className="flex flex-col w-full">
-                <div
-                    className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 max-h-[44rem] min-h-[44rem]">
-                    {NewsArticles.map((article, index) => (
-                        <NewsCard article={article} below1={index <= 3}/>
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
+                    {NewsArticles.map((article) => (
+                        <NewsCard article={article} key={article.id} />
                     ))}
                 </div>
-
+            </div>
+            <div className="flex w-full h-full">
+                <SignupNews />
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default News
+export default News;

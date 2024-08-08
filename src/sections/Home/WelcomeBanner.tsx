@@ -16,7 +16,7 @@ const WelcomeBanner = () => {
     return (
         <div className="flex xl:flex-row flex-col justify-center text-left">
             <div className="xl:w-2/5 flex flex-col justify-center items-start md:w-full">
-                <h1 className="mt-6 font-palanquin text-4xl lg:text-8xl z-30 font-bold">
+                <h1 className="mt-6 font-palanquin text-4xl lg:text-8xl text-gray-900 z-30 font-bold">
                     New Arrivals
                     <br />
                     <span className="text-blue-500 inline-block mt-3">Refurbished Phones</span>
@@ -34,7 +34,7 @@ const WelcomeBanner = () => {
                 <div className="hidden xl:flex justify-start items-start flex-wrap w-full mt-4 gap-16">
                     {statistics.map((stat, index) => (
                         <div key={index}>
-                            <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
+                            <p className="text-4xl font-palanquin text-gray-900 font-bold">{stat.value}</p>
                             <p className="leading-7 font-montserrat text-slate-gray">
                                 {stat.label}
                             </p>

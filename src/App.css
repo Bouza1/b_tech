@@ -118,3 +118,44 @@ canvas {
 .blue {
     color: #3b82f6;
 }
+
+.rect {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    background: #000;
+    overflow: unset;
+    border-radius: 15px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        border-radius: 15px;
+        background: #333 linear-gradient(45deg, #00b8ff, #193fd3, #e098ff);
+        background-size: 500%;
+        animation: position 12s linear infinite alternate;
+        z-index: -1;
+    }
+
+    &::after {
+        filter: blur(10px);
+    }
+}
+
+@keyframes position {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}

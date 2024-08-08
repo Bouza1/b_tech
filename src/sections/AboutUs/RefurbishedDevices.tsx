@@ -28,7 +28,7 @@ const RefurbishedDevices = () => {
                             472<span className="font-montserrat font-bold text-2xl">M</span>
                         </h2>
                     </div>
-                    <h2 className="font-montserrat text-2xl md:text-4xl font-bold text-center">
+                    <h2 className="font-montserrat text-2xl md:text-4xl font-bold text-gray-900 text-center">
                         {' '}
                         Devices are sent to landfill each year in the UK.
                     </h2>
@@ -55,7 +55,7 @@ const RefurbishedDevices = () => {
                 }}
                 viewport={{ once: false }}
             >
-                <h2 className="font-palanquin text-4xl md:text-8xl font-bold text-black text-right">
+                <h2 className="font-palanquin text-4xl md:text-8xl font-bold text-gray-900 text-right">
                     Refurbished <span className="text-blue-500 "> Device?</span>
                 </h2>
 

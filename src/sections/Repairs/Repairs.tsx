@@ -4,7 +4,7 @@ const Repairs = () => {
     return (
         <div className="flex flex-col justify-center gap-3">
             <div className="text-left">
-                <h2 className="text-8xl font-palanquin font-bold">
+                <h2 className="text-8xl font-palanquin text-gray-900 font-bold">
                     Need A <span className="text-blue-500"> Repair?</span>
                 </h2>
                 <p className="font-montserrat text-slate-gray text-left text-lg leading-8 mt-3">
@@ -18,10 +18,10 @@ const Repairs = () => {
             </div>
             <div className="flex flex-col justify-center gap-3">
                 <div className="flex flex-row w-full gap-5">
-                    <div className="w-1/3 rounded-2xl bg-brokenCompBanner bg-cover hover:bg-brokenPhoneBanner"></div>
+                    <div className="flex w-1/3 rounded-2xl bg-brokenCompBanner bg-cover hover:bg-brokenPhoneBanner"></div>
                     <div className="w-2/3">
                         <div className="flex w-full justify-center">
-                            <h2 className="text-8xl font-palanquin font-bold">
+                            <h2 className="text-8xl font-palanquin font-bold text-gray-900">
                                 Book One <span className="text-blue-500"> Now</span>
                             </h2>
                         </div>

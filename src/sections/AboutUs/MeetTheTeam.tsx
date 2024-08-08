@@ -4,7 +4,7 @@ import { TeamProfileCard } from './index.tsx';
 
 const MeetTheTeam = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-4">
             <motion.div
                 className=""
                 initial={{
@@ -24,7 +24,7 @@ const MeetTheTeam = () => {
                 }}
                 viewport={{ once: false }}
             >
-                <h2 className="text-8xl text-left font-palanquin font-bold">
+                <h2 className="text-8xl text-left font-palanquin text-gray-900 font-bold">
                     Meet The <span className="text-blue-500"> Team</span>
                 </h2>
             </motion.div>

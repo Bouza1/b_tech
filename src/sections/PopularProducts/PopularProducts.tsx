@@ -24,7 +24,7 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 <div className="text-left">
-                    <h2 className="text-8xl font-palanquin font-bold">
+                    <h2 className="text-8xl font-palanquin text-gray-900 font-bold">
                         Popular <span className="text-blue-500"> Products</span>
                     </h2>
                 </div>
@@ -54,7 +54,7 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 <div className="text-right">
-                    <h2 className="text-8xl font-palanquin font-bold">
+                    <h2 className="text-8xl font-palanquin text-gray-900 font-bold">
                         Shop <span className="text-blue-500"> More</span>
                     </h2>
                 </div>
@@ -62,7 +62,7 @@ const PopularProducts = () => {
 
             <motion.div
                 className={
-                    'mt-7 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14'
+                    'mt-2 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-8'
                 }
                 initial={{
                     opacity: 0,
@@ -81,7 +81,7 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 {categories.map((category) => (
-                    <div className="rounded-lg bg-blue-500 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer">
+                    <div className="rounded-lg bg-gray-900 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer" key={category.name}>
                         {category.name}
                     </div>
                 ))}

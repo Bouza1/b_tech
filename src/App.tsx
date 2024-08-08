@@ -21,7 +21,7 @@ function App() {
                     <Repairs />
                 </Section>
                 <Section id={'news'}>
-                    <News/>
+                    <News />
                 </Section>
             </main>
         </>

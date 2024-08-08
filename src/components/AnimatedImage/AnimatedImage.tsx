@@ -35,7 +35,7 @@ const AnimatedImage = ({ src, alt, title, bannerStats }: Props) => {
             }}
             viewport={{ once: false }}
         >
-            <p className="font-palanquin text-3xl sm:text-4xl text-gray-600 font-bold text-center">
+            <p className="font-palanquin text-3xl sm:text-4xl text-gray-900 font-bold text-center">
                 {title?.substring(0, title?.length - 2)}
                 <span className="text-xl">
                     {title?.substring(title?.length - 2, title?.length)}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="319.16663mm"
+   height="30.321033mm"
+   viewBox="0 0 319.16663 30.321033"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:export-bgcolor="#ffffff00" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-15.343172,-94.433576)">
+    <rect
+       style="opacity:1;fill:#ECEEFF;fill-opacity:1;stroke-width:0.558595;stroke-linecap:square;stroke-linejoin:round"
+       id="rect2"
+       width="319.16663"
+       height="30.321033"
+       x="15.343173"
+       y="94.433578"
+       ry="0"
+       inkscape:export-filename="blue_banner.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="opacity:1;fill:#111827;fill-opacity:1;stroke-width:0.4;stroke-linecap:square;stroke-linejoin:round"
+       d="m 334.50979,94.433577 -87.41734,10e-7 c -12.89208,19.026842 -41.14789,26.982332 -70.51777,30.321032 h 157.93511 z"
+       id="path3"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
