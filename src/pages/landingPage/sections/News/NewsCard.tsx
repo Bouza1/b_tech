@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { newsArticle } from '../../constants';
+import { newsArticle } from '../../../../constants';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
     article: newsArticle;
@@ -8,6 +9,7 @@ interface Props {
 
 const NewsCard = ({ article }: Props) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    const navigate = useNavigate();
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
@@ -15,34 +17,29 @@ const NewsCard = ({ article }: Props) => {
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
-        console.log(article.id);
+        navigate(`/article/${article.id}`)
     };
 
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
             {/* Front Side of the Card */}
             <div
-                className="flex gap-2 flex-col w-full h-full max-sm:w-full shadow-2xl rounded-xl hover:shadow-xl cursor-pointer p-2 duration-200 bg-hero bg-cover min-h-[16rem] max-h-[16rem]"
+                className="max-w-sm bg-hero bg-cover mx-auto group hover:no-underline focus:no-underline hidden sm:block shadow-2xl rounded-lg p-1 min-h-[22rem] max-h-[22rem] cursor-pointer"
                 onClick={handleFlip}
             >
-                <img
-                    className="rounded-tl-lg rounded-tr-lg max-h-36"
-                    src={article.imgUrl}
-                    alt={article.altText}
-                />
-
-                <div className="flex pl-1 pr-1 pt-1 w-full h-full flex-col overflow-hidden border-t-2 border-t-gray-900">
-                    <div className="flex flex-col flex-1 overflow-hidden">
-                        <h3 className="text-md font-palanquin font-semibold text-left text-gray-900">
-                            {article.title}
-                        </h3>
-                    </div>
+                <img role="presentation" className="object-cover w-full rounded h-36"
+                     src={article.imgUrl} />
+                <div className="p-6 space-y-2">
+                    <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
+                        {article.title}
+                    </h3>
+                    <span className="text-xs dark:text-gray-600">January 26, 2021</span>
                 </div>
             </div>
 
             {/* Back Side of the Card */}
             <div
-                className="flex flex-col w-full h-full max-sm:w-full shadow-2xl rounded-xl hover:shadow-xl cursor-pointer duration-200 bg-hero min-h-[16rem] max-h-[16rem]"
+                className="max-w-sm mx-auto group hover:no-underline overflow-hidden pb-1 focus:no-underline hidden sm:block bg-white shadow-2xl rounded-lg p-1 min-h-[22rem] max-h-[22rem]"
                 onClick={handleFlip}
             >
                 <div className="flex p-2 w-full h-full flex-col">
@@ -50,6 +47,9 @@ const NewsCard = ({ article }: Props) => {
                         <div className="flex w-full h-full overflow-hidden rounded-lg pl-2 pr-2 pb-1 pt-1">
                             <p className="text-sm text-left overflow-hidden text-ellipsis text-gray-900">
                                 {article.content[0]}
+                                {/*{article.content.map((paragraph) => (*/}
+                                {/*    <span>{paragraph}</span>*/}
+                                {/*))}*/}
                             </p>
                         </div>
                     </div>

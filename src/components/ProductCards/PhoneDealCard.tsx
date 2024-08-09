@@ -1,4 +1,4 @@
-import { Phone } from '../../sections/Home/WelcomeBanner.tsx';
+import { Phone } from '../../pages/landingPage/sections/Home/WelcomeBanner.tsx';
 
 interface Props {
     phone: Phone;

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 interface Props {
-    front:ReactNode;
-    back:ReactNode;
+    front: ReactNode;
+    back: ReactNode;
 }
 const FlipBox = () => {
     return (

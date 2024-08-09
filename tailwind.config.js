@@ -15,7 +15,7 @@ export default {
         },
         extend: {
             perspective: {
-                '700': '700px',
+                700: '700px',
             },
             transformOrigin: {
                 'center-center': 'center center',

@@ -41,7 +41,7 @@ const ProductCard = ({
             viewport={{ once: false }}
         >
             <img
-                className="bg-cover rounded-tl-lg rounded-tr-lg bg-card p-2 "
+                className="bg-hero rounded-tl-lg rounded-tr-lg p-2 "
                 src={imgURL}
                 alt={name}
             />

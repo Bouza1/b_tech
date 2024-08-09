@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { phoneIPhoneXR } from '../../assets/images/phones';
+import { phoneIPhoneXR } from '../../../../assets/images/phones';
 
 const LavaLamp = () => {
     useEffect(() => {

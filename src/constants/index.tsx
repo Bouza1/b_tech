@@ -9,7 +9,7 @@ import { gCardGigaByte8GB, ramDominatorPlatinumRGB } from '../assets/images/comp
 
 import { NavLink } from '../components/Misc/NavBar.tsx';
 import { desktop1 } from '../assets/images/computers';
-import { Staff } from '../sections/AboutUs/TeamProfileCard.tsx';
+import { Staff } from '../pages/landingPage/sections/AboutUs/TeamProfileCard.tsx';
 import { daveHeadshot, joshHeadshot } from '../assets/images/headshots';
 
 export const navLinks: NavLink[] = [
@@ -144,6 +144,7 @@ export type newsArticle = {
     content: string[];
     imgUrl: string;
     altText: string;
+    author: string;
     shares: { linkedIn: number; facebook: number };
 };
 
@@ -159,6 +160,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://th.bing.com/th/id/R.c59cb4d6dda0d97d72600fc66821bbcd?rik=p%2bqtqo2eNb0jtA&riu=http%3a%2f%2fthestatetimes.com%2fwp-content%2fuploads%2f2018%2f02%2finfotech.jpg&ehk=FF2w7obphoNFJAmHb0IyqQuqdiAVkB1haRtebXosqj8%3d&risl=&pid=ImgRaw&r=0',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -177,6 +179,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://th.bing.com/th/id/R.08d523bb154574feb6b4947e1b94f851?rik=FIJdsqxvkS3jMQ&pid=ImgRaw&r=0',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -194,6 +197,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://tacticalinvestor.com/wp-content/uploads/2020/06/AI-2.jpg',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -210,6 +214,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://assets.change.org/photos/9/ab/no/UTABnoRnAclkltN-800x450-noPad.jpg?1573359644',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -227,6 +232,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://physicsworld.com/wp-content/uploads/2023/04/2023-04-Transactions-quantum-computer-CPU-concept-1346925522-iStock_Olemedia.jpg',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -244,6 +250,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://imageio.forbes.com/specials-images/imageserve/60fad9e991883486cd956653/0x0.png?format=png&width=1200',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -260,6 +267,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://imageio.forbes.com/specials-images/imageserve/649f03880dbc72f37309d953/0x0.jpg?format=jpg&crop=3249,1827,x1209,y569,safe&width=1200',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
     },
     {
@@ -277,6 +285,7 @@ export const NewsArticles: newsArticle[] = [
         ],
         imgUrl: 'https://recodehive.com/wp-content/uploads/2021/05/Simple-Work-Blog-Banner-scaled.jpg',
         altText: 'Reddit Logo',
+        author: 'Josh Bousfield',
         shares: { linkedIn: 1, facebook: 0 },
-    },
+    }
 ];

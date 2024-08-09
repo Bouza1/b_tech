@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { staff } from '../../constants';
+import { staff } from '../../../../constants';
 import { TeamProfileCard } from './index.tsx';
 
 const MeetTheTeam = () => {

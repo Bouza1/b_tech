@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { categories, specialOffers } from '../../constants';
-import { ProductCard } from '../../components';
+import { categories, specialOffers } from '../../../../constants';
+import { ProductCard } from '../../../../components';
 
 const PopularProducts = () => {
     return (
@@ -81,7 +81,10 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 {categories.map((category) => (
-                    <div className="rounded-lg bg-gray-900 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer" key={category.name}>
+                    <div
+                        className="rounded-lg bg-gray-900 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer"
+                        key={category.name}
+                    >
                         {category.name}
                     </div>
                 ))}

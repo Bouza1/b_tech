@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { phoneDeals, statistics } from '../../constants';
-import { arrowRight } from '../../assets/icons';
-import { BigButton, AnimatedImage, PhoneDealCard } from '../../components';
+import { phoneDeals, statistics } from '../../../../constants';
+import { arrowRight } from '../../../../assets/icons';
+import { BigButton, AnimatedImage, PhoneDealCard } from '../../../../components';
 
 export interface Phone {
     thumbnail: string;
@@ -34,7 +34,9 @@ const WelcomeBanner = () => {
                 <div className="hidden xl:flex justify-start items-start flex-wrap w-full mt-4 gap-16">
                     {statistics.map((stat, index) => (
                         <div key={index}>
-                            <p className="text-4xl font-palanquin text-gray-900 font-bold">{stat.value}</p>
+                            <p className="text-4xl font-palanquin text-gray-900 font-bold">
+                                {stat.value}
+                            </p>
                             <p className="leading-7 font-montserrat text-slate-gray">
                                 {stat.label}
                             </p>
