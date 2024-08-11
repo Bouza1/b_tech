@@ -1,17 +1,56 @@
-import { useState } from 'react';
-import { phoneDeals, statistics } from '../../../../constants';
+import { useEffect, useState } from 'react';
+import { statistics } from '../../../../constants';
 import { arrowRight } from '../../../../assets/icons';
 import { BigButton, AnimatedImage, PhoneDealCard } from '../../../../components';
+import { get, ref } from 'firebase/database';
+import { database } from '../../../../firebase.ts';
 
 export interface Phone {
     thumbnail: string;
-    bigPhone: string;
-    title?: string;
+    bigImg: string;
+    name: string;
     bannerStats?: string[];
 }
 
 const WelcomeBanner = () => {
-    const [phoneSelected, setPhoneSelected] = useState<Phone>(phoneDeals[0]);
+    const [phoneSelected, setPhoneSelected] = useState<Phone | null>(null);
+    const [phones, setPhones] = useState<Phone[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const dbRef = ref(database, '/products/phones');
+                const snapshot = await get(dbRef);
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    setPhones(data);
+                } else {
+                    console.log('No data available');
+                }
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (phones.length > 0) {
+            setPhoneSelected(phones[0]);
+        }
+    }, [phones]);
+
+    useEffect(() => {
+        console.log(phones);
+    }, [phones]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="flex xl:flex-row flex-col justify-center text-left">
@@ -47,22 +86,26 @@ const WelcomeBanner = () => {
 
             <div className="relative flex-1 flex-col flex w-full items-center min-h-[800px] max-h-[1200px] lg:min-h-svh lg:max-h-svh bg-hero">
                 <div className="flex flex-col mt-20 w-full">
-                    <AnimatedImage
-                        src={phoneSelected?.bigPhone}
-                        alt="phone collection"
-                        title={phoneSelected.title}
-                        bannerStats={phoneSelected.bannerStats}
-                    />
+                    {phoneSelected && (
+                        <AnimatedImage
+                            bigImg={phoneSelected.bigImg}
+                            name={phoneSelected.name}
+                            bannerStats={phoneSelected.bannerStats}
+                            thumbnail={phoneSelected.bigImg}
+                            key={phoneSelected.name}
+                        />
+                    )}
                 </div>
 
                 <div className="flex gap-4 md:gap-6 absolute bottom-[5%] justify-between max-sm:px-6">
-                    {phoneDeals.map((phone, index) => (
+                    {phones.map((phone, index) => (
                         <div key={index}>
                             <PhoneDealCard
                                 phone={phone}
                                 setPhoneSelected={setPhoneSelected}
-                                phoneSelected={phoneSelected}
+                                phoneSelected={phoneSelected ? phoneSelected : null}
                             />
+                            <p>{index}</p>
                         </div>
                     ))}
                 </div>

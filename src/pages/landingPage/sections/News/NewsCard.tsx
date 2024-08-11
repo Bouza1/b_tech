@@ -17,7 +17,8 @@ const NewsCard = ({ article }: Props) => {
 
     const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
-        navigate(`/article/${article.id}`)
+        console.log(article.id);
+        navigate(`/article/${article.id}`);
     };
 
     return (
@@ -27,8 +28,12 @@ const NewsCard = ({ article }: Props) => {
                 className="max-w-sm bg-hero bg-cover mx-auto group hover:no-underline focus:no-underline hidden sm:block shadow-2xl rounded-lg p-1 min-h-[22rem] max-h-[22rem] cursor-pointer"
                 onClick={handleFlip}
             >
-                <img role="presentation" className="object-cover w-full rounded h-36"
-                     src={article.imgUrl} />
+                <img
+                    role="presentation"
+                    className="object-cover w-full rounded h-36"
+                    src={article.imgUrl}
+                    alt={article.altText}
+                />
                 <div className="p-6 space-y-2">
                     <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
                         {article.title}
@@ -47,9 +52,6 @@ const NewsCard = ({ article }: Props) => {
                         <div className="flex w-full h-full overflow-hidden rounded-lg pl-2 pr-2 pb-1 pt-1">
                             <p className="text-sm text-left overflow-hidden text-ellipsis text-gray-900">
                                 {article.content[0]}
-                                {/*{article.content.map((paragraph) => (*/}
-                                {/*    <span>{paragraph}</span>*/}
-                                {/*))}*/}
                             </p>
                         </div>
                     </div>

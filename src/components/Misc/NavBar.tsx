@@ -4,7 +4,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link as ScrollLink } from 'react-scroll';
 import { logoHQ } from '../../assets/images/logos_graphics';
 import { navLinks } from '../../constants';
-import { Props } from '@headlessui/react/dist/types';
 import { useNavigate } from 'react-router-dom';
 
 export type NavLink = {
@@ -18,16 +17,16 @@ function classNames(...classes: string[]) {
 }
 
 type Props = {
-    showHighlight:boolean
-}
+    showHighlight: boolean;
+};
 
-const NavBar = ({showHighlight}:Props) => {
+const NavBar = ({ showHighlight }: Props) => {
     const [current, setCurrent] = useState<string>(showHighlight ? 'Home' : '');
     const navigate = useNavigate();
 
-    const handleClick = (name: string, href:string) => {
+    const handleClick = (name: string, href: string) => {
         setCurrent(name);
-        navigate(`/#${href}`)
+        navigate(`/#${href}`);
     };
 
     return (
@@ -100,7 +99,7 @@ const NavBar = ({showHighlight}:Props) => {
                                     : 'text-gray-300 hover:bg-blue-600 hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium cursor-pointer',
                             )}
-                            onClick={() => handleClick(item.name)}
+                            onClick={() => handleClick(item.name, item.href)}
                         >
                             {item.name}
                         </ScrollLink>
