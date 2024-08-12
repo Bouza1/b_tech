@@ -40,11 +40,7 @@ const ProductCard = ({
             }}
             viewport={{ once: false }}
         >
-            <img
-                className="bg-cover rounded-tl-lg rounded-tr-lg bg-card p-2 "
-                src={imgURL}
-                alt={name}
-            />
+            <img className="bg-hero rounded-tl-lg rounded-tr-lg p-2 " src={imgURL} alt={name} />
 
             <div className="flex flex-1 flex-col mt-2 justify-between">
                 <h3 className="text-lg font-sans text-left">{name}</h3>

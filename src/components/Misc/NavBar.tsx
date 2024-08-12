@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link as ScrollLink } from 'react-scroll';
 import { logoHQ } from '../../assets/images/logos_graphics';
 import { navLinks } from '../../constants';
+import { useNavigate } from 'react-router-dom';
 
 export type NavLink = {
     name: string;
@@ -15,11 +16,17 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
 }
 
-const NavBar = () => {
-    const [current, setCurrent] = useState<string>('Home');
+type Props = {
+    showHighlight: boolean;
+};
 
-    const handleClick = (name: string) => {
+const NavBar = ({ showHighlight }: Props) => {
+    const [current, setCurrent] = useState<string>(showHighlight ? 'Home' : '');
+    const navigate = useNavigate();
+
+    const handleClick = (name: string, href: string) => {
         setCurrent(name);
+        navigate(`/#${href}`);
     };
 
     return (
@@ -65,7 +72,7 @@ const NavBar = () => {
                                             : 'border-b-2 border-transparent hover:border-b-blue-600',
                                         'px-3 py-2 font-semibold cursor-pointer',
                                     )}
-                                    onClick={() => handleClick(item.name)}
+                                    onClick={() => handleClick(item.name, item.href)}
                                 >
                                     {item.name}
                                 </ScrollLink>
@@ -92,7 +99,7 @@ const NavBar = () => {
                                     : 'text-gray-300 hover:bg-blue-600 hover:text-white',
                                 'block rounded-md px-3 py-2 text-base font-medium cursor-pointer',
                             )}
-                            onClick={() => handleClick(item.name)}
+                            onClick={() => handleClick(item.name, item.href)}
                         >
                             {item.name}
                         </ScrollLink>
