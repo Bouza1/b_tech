@@ -1,31 +1,33 @@
 import { NavBar, Section } from '../../components';
-import { WelcomeBanner } from './sections/Home';
+import { WelcomeBanner } from './sections/WelcomeBanner';
 import { PopularProducts } from './sections/PopularProducts';
 import { AboutUs } from './sections/AboutUs';
 import { Repairs } from './sections/Repairs';
-import News from './sections/News/News.tsx';
+import NewsLandingStrip from './sections/News/NewsLandingStrip.tsx';
+import { Footer } from '../../components/Misc';
 
 const LandingPage = () => {
     return (
         <>
             <NavBar showHighlight={true} />
             <main>
-                <Section id={'home'}>
-                    <WelcomeBanner />
+                <Section id={'home_section'}>
+                    <WelcomeBanner key={'welcome_banner'} />
                 </Section>
-                <Section id={'products'}>
-                    <PopularProducts />
+                <Section id={'products_section'}>
+                    <PopularProducts key={'products'} />
                 </Section>
-                <Section id={'about-us'}>
-                    <AboutUs />
+                <Section id={'about_us_section'}>
+                    <AboutUs key={'about_us'}  />
                 </Section>
-                <Section id={'repairs'}>
-                    <Repairs />
+                <Section id={'repairs_section'}>
+                    <Repairs key={'repairs'}  />
                 </Section>
-                <Section id={'news'}>
-                    <News />
+                <Section id={'news_section'}>
+                    <NewsLandingStrip key={'newsPage'}  />
                 </Section>
             </main>
+            <Footer/>
         </>
     );
 };

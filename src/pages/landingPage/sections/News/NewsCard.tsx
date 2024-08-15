@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { newsArticle } from '../../../../constants';
 import { useNavigate } from 'react-router-dom';
+import { NewsArticle } from '../../../../interfaces';
 
 interface Props {
-    article: newsArticle;
+    article: NewsArticle;
 }
 
 const NewsCard = ({ article }: Props) => {
@@ -25,7 +25,7 @@ const NewsCard = ({ article }: Props) => {
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
             {/* Front Side of the Card */}
             <div
-                className="max-w-sm bg-hero bg-cover mx-auto group hover:no-underline focus:no-underline hidden sm:block shadow-2xl rounded-lg p-1 min-h-[22rem] max-h-[22rem] cursor-pointer"
+                className="max-w-sm bg-gray-300 mx-auto group hover:no-underline focus:no-underline hidden sm:block shadow-2xl rounded-lg p-1 min-h-[22rem] max-h-[22rem] cursor-pointer"
                 onClick={handleFlip}
             >
                 <img

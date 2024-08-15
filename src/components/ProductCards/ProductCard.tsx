@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { SmallButton } from '../index.tsx';
 
 interface ProductCardProps {
+    id: string;
     imgURL: string;
     name: string;
     newPrice: string;
@@ -19,11 +20,12 @@ const ProductCard = ({
     savings,
     tags,
     below1,
+    id
 }: ProductCardProps) => {
-    console.log(below1);
     return (
         <motion.div
             className="flex flex-1 flex-col w-full max-sm:w-full shadow-3xl rounded-xl p-2 border-2 hover:shadow-xl cursor-pointer duration-200"
+            key={id}
             initial={{
                 opacity: 0,
                 x: below1 ? -100 : 100,
@@ -45,8 +47,9 @@ const ProductCard = ({
             <div className="flex flex-1 flex-col mt-2 justify-between">
                 <h3 className="text-lg font-sans text-left">{name}</h3>
                 <div className="flex flex-wrap gap-1.5">
-                    {tags.map((tag) => (
-                        <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500">
+                    {tags.map((tag, index) => (
+                        <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500"
+                        key={`${name}_tag_${index}`}>
                             {tag}
                         </span>
                     ))}

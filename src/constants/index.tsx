@@ -1,9 +1,6 @@
 import { paint, support, repair } from '../assets/icons';
 import {
-    phoneSamsungS22,
     phonePixel8,
-    phoneIPhone14,
-    phoneIPhoneXR,
 } from '../assets/images/phones';
 import { gCardGigaByte8GB, ramDominatorPlatinumRGB } from '../assets/images/computer_accessories';
 
@@ -17,29 +14,9 @@ export const navLinks: NavLink[] = [
     { name: 'Shop', href: 'products', current: false },
     { name: 'About Us', href: 'about-us', current: false },
     { name: 'Repairs', href: 'repairs', current: false },
-    { name: 'News', href: 'news', current: false },
+    { name: 'News', href: 'newsPage', current: false },
 ];
 
-export const phoneDeals = [
-    {
-        thumbnail: phoneSamsungS22,
-        bigPhone: phoneSamsungS22,
-        title: 'Samsung S22 - 128GB',
-        bannerStats: ['1y Warranty', 'Free Sim', 'Factory Reset', 'Unlocked'],
-    },
-    {
-        thumbnail: phoneIPhoneXR,
-        bigPhone: phoneIPhoneXR,
-        title: 'IPhone XR - 128GB',
-        bannerStats: ['Free Sim', 'Factory Reset', 'Unlocked'],
-    },
-    {
-        thumbnail: phoneIPhone14,
-        bigPhone: phoneIPhone14,
-        title: 'IPhone 14 - 256GB',
-        bannerStats: ['Free Sim', 'Factory Reset', 'New Battery'],
-    },
-];
 
 export const statistics = [
     { value: '1y', label: 'Warranty' },
@@ -129,21 +106,13 @@ export const services = [
 
 type category = {
     name: string;
+    background:string;
 };
 
 export const categories: category[] = [
-    { name: 'Computers' },
-    { name: 'Hardware' },
-    { name: 'Mobile Phones' },
-    { name: 'Accessories' },
+    { name: 'Computers', background: 'bg-computerCategory'},
+    { name: 'Hardware', background: 'bg-hardwareCategory' },
+    { name: 'Mobile Phones', background: 'bg-mobileCategory' },
+    { name: 'Accessories', background: 'bg-computerCategory' },
 ];
 
-export type newsArticle = {
-    id: number;
-    title: string;
-    content: string[];
-    imgUrl: string;
-    altText: string;
-    author: string;
-    shares: { linkedIn: number; facebook: number };
-};

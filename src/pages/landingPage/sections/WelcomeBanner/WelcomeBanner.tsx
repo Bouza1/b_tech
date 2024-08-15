@@ -4,13 +4,8 @@ import { arrowRight } from '../../../../assets/icons';
 import { BigButton, AnimatedImage, PhoneDealCard } from '../../../../components';
 import { get, ref } from 'firebase/database';
 import { database } from '../../../../firebase.ts';
+import { Phone } from '../../../../interfaces';
 
-export interface Phone {
-    thumbnail: string;
-    bigImg: string;
-    name: string;
-    bannerStats?: string[];
-}
 
 const WelcomeBanner = () => {
     const [phoneSelected, setPhoneSelected] = useState<Phone | null>(null);
@@ -25,6 +20,7 @@ const WelcomeBanner = () => {
                 if (snapshot.exists()) {
                     const data = snapshot.val();
                     setPhones(data);
+                    setPhoneSelected(data[0])
                 } else {
                     console.log('No data available');
                 }
@@ -43,6 +39,10 @@ const WelcomeBanner = () => {
             setPhoneSelected(phones[0]);
         }
     }, [phones]);
+
+    useEffect(() => {
+        phoneSelected && console.log(phoneSelected.imgUrl)
+    }, [phoneSelected]);
 
     useEffect(() => {
         console.log(phones);
@@ -88,12 +88,12 @@ const WelcomeBanner = () => {
                 <div className="flex flex-col mt-20 w-full">
                     {phoneSelected && (
                         <AnimatedImage
-                            bigImg={phoneSelected.bigImg}
+                            imgUrl={phoneSelected.imgUrl}
                             name={phoneSelected.name}
                             bannerStats={phoneSelected.bannerStats}
-                            thumbnail={phoneSelected.bigImg}
                             key={phoneSelected.name}
-                        />
+                            id={phoneSelected.id}
+                            price={phoneSelected.price}/>
                     )}
                 </div>
 
@@ -105,7 +105,6 @@ const WelcomeBanner = () => {
                                 setPhoneSelected={setPhoneSelected}
                                 phoneSelected={phoneSelected ? phoneSelected : null}
                             />
-                            <p>{index}</p>
                         </div>
                     ))}
                 </div>

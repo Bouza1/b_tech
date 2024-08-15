@@ -2,18 +2,25 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '../../firebase.ts';
-import { Phone } from '../../pages/landingPage/sections/Home/WelcomeBanner.tsx';
+import { Phone } from '../../interfaces';
+import { useNavigate } from 'react-router-dom';
 
-const AnimatedImage = ({ bigImg, name, bannerStats }: Phone) => {
+const AnimatedImage = ({ imgUrl, name, bannerStats, id }: Phone) => {
     const [key, setKey] = useState(0);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+
+    const handleToProductPage = () => {
+        navigate(`/product/${id}`);
+    }
+
 
     useEffect(() => {
         const fetchImage = async () => {
             setLoading(true);
             try {
-                const imageRef = ref(storage, `phones/${bigImg}`);
+                const imageRef = ref(storage, `phones/${imgUrl}`);
                 const url = await getDownloadURL(imageRef);
                 setImageUrl(url);
             } catch (error) {
@@ -24,7 +31,7 @@ const AnimatedImage = ({ bigImg, name, bannerStats }: Phone) => {
         };
 
         fetchImage();
-    }, [bigImg]);
+    }, []);
 
     useEffect(() => {
         setKey((prevKey) => prevKey + 1);
@@ -62,7 +69,8 @@ const AnimatedImage = ({ bigImg, name, bannerStats }: Phone) => {
                 <motion.img
                     src={imageUrl as string}
                     alt={name}
-                    className="object-contain w-full h-full p-2"
+                    className="object-contain w-full h-full p-2 cursor-pointer"
+                    onClick={handleToProductPage}
                 />
             </div>
             <motion.div
@@ -84,8 +92,8 @@ const AnimatedImage = ({ bigImg, name, bannerStats }: Phone) => {
                 viewport={{ once: false }}
             >
                 {bannerStats?.map((item, index) => (
-                    <div className="rounded-md bg-blue-500 px-4 py-2 sm:text-md md:text-lg font-monserrat text-white">
-                        <p key={index}>{item}</p>
+                    <div className="rounded-md bg-blue-500 px-4 py-2 sm:text-md md:text-lg font-monserrat text-white" key={`bannerStat_${name}_${index}`}>
+                        <p>{item}</p>
                     </div>
                 ))}
             </motion.div>

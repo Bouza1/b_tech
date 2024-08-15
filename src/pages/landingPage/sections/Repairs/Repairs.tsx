@@ -2,7 +2,7 @@ import RepairForm from './RepairForm.tsx';
 
 const Repairs = () => {
     return (
-        <div className="flex flex-col justify-center gap-3">
+        <div className="flex flex-col justify-center gap-10 mt-10">
             <div className="text-left">
                 <h2 className="text-8xl font-palanquin text-gray-900 font-bold">
                     Need A <span className="text-blue-500"> Repair?</span>

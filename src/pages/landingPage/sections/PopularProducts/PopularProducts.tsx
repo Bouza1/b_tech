@@ -4,7 +4,7 @@ import { ProductCard } from '../../../../components';
 
 const PopularProducts = () => {
     return (
-        <div className="flex flex-col justify-center gap-5">
+        <div className="flex flex-col justify-center">
             <motion.div
                 className="flex flex-col"
                 initial={{
@@ -30,9 +30,9 @@ const PopularProducts = () => {
                 </div>
             </motion.div>
 
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mt-10">
                 {specialOffers.map((product, index) => (
-                    <ProductCard key={product.name} {...product} below1={index <= 1} />
+                    <ProductCard id={`product_${index}`} key={`product_card_${index}`} {...product} below1={index <= 1} />
                 ))}
             </div>
             <motion.div
@@ -53,16 +53,11 @@ const PopularProducts = () => {
                 }}
                 viewport={{ once: false }}
             >
-                <div className="text-right">
-                    <h2 className="text-8xl font-palanquin text-gray-900 font-bold">
-                        Shop <span className="text-blue-500"> More</span>
-                    </h2>
-                </div>
             </motion.div>
 
             <motion.div
                 className={
-                    'mt-2 grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-8'
+                    'grid lg:grid-cols-4 text-white md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 mt-10 gap-8'
                 }
                 initial={{
                     opacity: 0,
@@ -81,8 +76,9 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 {categories.map((category) => (
+
                     <div
-                        className="rounded-lg bg-gray-900 text-2xl py-4 font-palanquin hover:wiggle font-bold cursor-pointer"
+                        className={`rounded-lg flex justify-center items-center text-3xl py-4 h-40 font-palanquin text-white ${category.background} hover:bg-gray-900 hover:items-start hover:text-blue-500 bg-cover font-bold cursor-pointer`}
                         key={category.name}
                     >
                         {category.name}

@@ -1,5 +1,5 @@
 export { AnimatedImage } from './AnimatedImage';
 export { ProductCard, PhoneDealCard } from './ProductCards';
-export { SmallButton, BigButton, SendButton } from './Buttons';
-export { NavBar, Section } from './Misc';
-export { StandardInput, TextArea, BorderlessInput } from './Inputs';
+export { BorderlessInput, StandardInput, TextArea } from './Inputs'
+export { SmallButton, BigButton } from './Buttons';
+export {NavBar, Section, Footer} from './Misc'

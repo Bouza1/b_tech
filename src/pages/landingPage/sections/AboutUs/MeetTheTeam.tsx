@@ -4,7 +4,7 @@ import { TeamProfileCard } from './index.tsx';
 
 const MeetTheTeam = () => {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-10">
             <motion.div
                 className=""
                 initial={{
@@ -31,7 +31,7 @@ const MeetTheTeam = () => {
 
             <div className="relative flex w-full">
                 <motion.div
-                    className="flex absolute w-full h-full bg-triangle"
+                    className="flex absolute w-full h-full bg-triangle_purple"
                     initial={{
                         opacity: 0,
                         x: 100,

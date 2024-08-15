@@ -1,7 +1,7 @@
-import { Phone } from '../../pages/landingPage/sections/Home/WelcomeBanner.tsx';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { useEffect, useState } from 'react';
 import { storage } from '../../firebase.ts';
+import { Phone } from '../../interfaces';
 
 interface Props {
     phone: Phone;
@@ -16,7 +16,7 @@ const PhoneDealCard = ({ phone, setPhoneSelected, phoneSelected }: Props) => {
     useEffect(() => {
         const fetchImage = async () => {
             try {
-                const imageRef = ref(storage, `phones/${phone.bigImg}`);
+                const imageRef = ref(storage, `phones/${phone.imgUrl}`);
 
                 const url = await getDownloadURL(imageRef);
                 setImageUrl(url);
@@ -35,7 +35,7 @@ const PhoneDealCard = ({ phone, setPhoneSelected, phoneSelected }: Props) => {
     }, [imageUrl]);
 
     const handleClick = () => {
-        if (phoneSelected?.bigImg !== phone.bigImg) {
+        if (phoneSelected?.imgUrl !== phone.imgUrl) {
             setPhoneSelected(phone);
         }
     };
@@ -47,7 +47,7 @@ const PhoneDealCard = ({ phone, setPhoneSelected, phoneSelected }: Props) => {
     return (
         <div
             className={`border-2 rounded-xl ${
-                phoneSelected?.bigImg === phone.bigImg ? 'border-blue-500' : 'border-transparent'
+                phoneSelected?.imgUrl === phone.imgUrl ? 'border-blue-500' : 'border-transparent'
             } cursor-pointer max-sm:flex-1`}
             onClick={handleClick}
         >

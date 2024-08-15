@@ -21,12 +21,12 @@ type Props = {
 };
 
 const NavBar = ({ showHighlight }: Props) => {
-    const [current, setCurrent] = useState<string>(showHighlight ? 'Home' : '');
+    const [current, setCurrent] = useState<string>(showHighlight ? 'WelcomeBanner' : '');
     const navigate = useNavigate();
 
     const handleClick = (name: string, href: string) => {
         setCurrent(name);
-        navigate(`/#${href}`);
+        navigate(`/${href}`);
     };
 
     return (

@@ -1,4 +1,6 @@
 import { LandingPage } from './landingPage';
-import { Article } from './article';
+import { ArticlePage } from './articlePage';
+import { NewsPage} from './newsPage';
+import { ProductPage } from './productPage';
 
-export { LandingPage, Article };
+export { LandingPage, ArticlePage, NewsPage, ProductPage };

@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { NavBar, Section } from '../../components';
-import { newsArticle } from '../../constants';
 import { useEffect, useState } from 'react';
 import { get, ref } from 'firebase/database';
 import { database } from '../../firebase.ts';
+import { NewsArticle } from '../../interfaces';
 
-const Article = () => {
+const ArticlePage = () => {
     const { articleId } = useParams();
-    const [article, setArticle] = useState<newsArticle | null>(null);
+    const [article, setArticle] = useState<NewsArticle | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const Article = () => {
                     <div className="p-5 mx-auto sm:p-10 md:p-16 bg-hero dark:text-gray-800">
                         <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                             <img
-                                src={article && article.imgUrl}
+                                src={article ? article.imgUrl : ""}
                                 alt={article ? article.altText : 'Alt text'}
                                 className="w-full h-60 sm:h-96 dark:bg-gray-500"
                             />
@@ -81,4 +81,4 @@ const Article = () => {
     );
 };
 
-export default Article;
+export default ArticlePage;

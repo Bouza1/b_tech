@@ -37,10 +37,13 @@ export default {
             backgroundImage: {
                 hero: "url('assets/images/logos_graphics/collection-background.svg')",
                 card: "url('assets/images/logos_graphics/thumbnail-background.svg')",
-                triangle: "url('assets/images/logos_graphics/triangle.svg')",
+                triangle_purple: "url('assets/images/logos_graphics/triangle_purple.svg')",
                 brokenCompBanner: "url('assets/images/logos_graphics/repair_comp_banner.svg')",
                 brokenPhoneBanner: "url('assets/images/logos_graphics/repair_phone_banner.svg')",
                 blueDiv: "url('assets/images/logos_graphics/blue_banner.svg')",
+                computerCategory:"url('assets/images/logos_graphics/computer_category.jpg')",
+                hardwareCategory:"url('assets/images/logos_graphics/hardware_category.jpg')",
+                mobileCategory:"url('assets/images/logos_graphics/mobile_category.png')"
             },
             screens: {
                 wide: '1440px',

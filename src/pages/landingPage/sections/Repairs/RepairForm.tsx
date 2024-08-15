@@ -8,10 +8,12 @@ import {
     UserIcon,
     WrenchIcon,
 } from '@heroicons/react/16/solid';
-import { SendButton, StandardInput } from '../../../../components';
+
 import { TextArea } from '../../../../components/Inputs';
 import SectionButton from '../../../../components/Buttons/SectionButton.tsx';
 import { MdOutlineEmail, MdOutlineMessage, MdWhatsapp } from 'react-icons/md';
+import { StandardInput } from '../../../../components';
+import { SendButton } from '../../../../components/Buttons';
 
 const RepairForm = () => {
     // Section 1
