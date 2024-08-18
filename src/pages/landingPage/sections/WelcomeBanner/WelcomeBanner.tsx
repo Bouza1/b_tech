@@ -6,7 +6,6 @@ import { get, ref } from 'firebase/database';
 import { database } from '../../../../firebase.ts';
 import { Phone } from '../../../../interfaces';
 
-
 const WelcomeBanner = () => {
     const [phoneSelected, setPhoneSelected] = useState<Phone | null>(null);
     const [phones, setPhones] = useState<Phone[]>([]);
@@ -20,7 +19,7 @@ const WelcomeBanner = () => {
                 if (snapshot.exists()) {
                     const data = snapshot.val();
                     setPhones(data);
-                    setPhoneSelected(data[0])
+                    setPhoneSelected(data[0]);
                 } else {
                     console.log('No data available');
                 }
@@ -41,7 +40,7 @@ const WelcomeBanner = () => {
     }, [phones]);
 
     useEffect(() => {
-        phoneSelected && console.log(phoneSelected.imgUrl)
+        phoneSelected && console.log(phoneSelected.imgUrl);
     }, [phoneSelected]);
 
     useEffect(() => {
@@ -93,7 +92,9 @@ const WelcomeBanner = () => {
                             bannerStats={phoneSelected.bannerStats}
                             key={phoneSelected.name}
                             id={phoneSelected.id}
-                            price={phoneSelected.price}/>
+                            price={phoneSelected.price}
+                            table={"phones"}
+                        />
                     )}
                 </div>
 

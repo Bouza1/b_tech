@@ -3,7 +3,7 @@ const ProductDetails = () => {
         <>
             <p>Product Details</p>
         </>
-    )
-}
+    );
+};
 
 export default ProductDetails;

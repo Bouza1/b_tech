@@ -41,9 +41,9 @@ export default {
                 brokenCompBanner: "url('assets/images/logos_graphics/repair_comp_banner.svg')",
                 brokenPhoneBanner: "url('assets/images/logos_graphics/repair_phone_banner.svg')",
                 blueDiv: "url('assets/images/logos_graphics/blue_banner.svg')",
-                computerCategory:"url('assets/images/logos_graphics/computer_category.jpg')",
-                hardwareCategory:"url('assets/images/logos_graphics/hardware_category.jpg')",
-                mobileCategory:"url('assets/images/logos_graphics/mobile_category.png')"
+                computerCategory: "url('assets/images/logos_graphics/computer_category.jpg')",
+                hardwareCategory: "url('assets/images/logos_graphics/hardware_category.jpg')",
+                mobileCategory: "url('assets/images/logos_graphics/mobile_category.png')",
             },
             screens: {
                 wide: '1440px',

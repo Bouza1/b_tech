@@ -1,13 +1,6 @@
-interface Product {
-    id: string;
-    imgUrl: string;
-    name: string;
-    price: number;
-}
-
 export interface NewsArticle {
     id: number;
-    date:string;
+    date: string;
     title: string;
     content: string[];
     imgUrl: string;
@@ -16,7 +9,14 @@ export interface NewsArticle {
     shares: { linkedIn: number; facebook: number };
 }
 
-export interface Phone extends Product {
-    bannerStats?: string[];
+interface BaseProduct {
+    id: string;
+    imgUrl: string;
+    name: string;
+    price: number;
+    table: string;
 }
 
+export interface Phone extends BaseProduct {
+    bannerStats?: string[];
+}

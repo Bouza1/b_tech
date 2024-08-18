@@ -42,7 +42,7 @@ const ArticlePage = () => {
                     <div className="p-5 mx-auto sm:p-10 md:p-16 bg-hero dark:text-gray-800">
                         <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
                             <img
-                                src={article ? article.imgUrl : ""}
+                                src={article ? article.imgUrl : ''}
                                 alt={article ? article.altText : 'Alt text'}
                                 className="w-full h-60 sm:h-96 dark:bg-gray-500"
                             />

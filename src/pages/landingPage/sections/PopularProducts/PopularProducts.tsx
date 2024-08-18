@@ -32,7 +32,12 @@ const PopularProducts = () => {
 
             <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-14 mt-10">
                 {specialOffers.map((product, index) => (
-                    <ProductCard id={`product_${index}`} key={`product_card_${index}`} {...product} below1={index <= 1} />
+                    <ProductCard
+                        id={`product_${index}`}
+                        key={`product_card_${index}`}
+                        {...product}
+                        below1={index <= 1}
+                    />
                 ))}
             </div>
             <motion.div
@@ -52,8 +57,7 @@ const PopularProducts = () => {
                     },
                 }}
                 viewport={{ once: false }}
-            >
-            </motion.div>
+            ></motion.div>
 
             <motion.div
                 className={
@@ -76,7 +80,6 @@ const PopularProducts = () => {
                 viewport={{ once: false }}
             >
                 {categories.map((category) => (
-
                     <div
                         className={`rounded-lg flex justify-center items-center text-3xl py-4 h-40 font-palanquin text-white ${category.background} hover:bg-gray-900 hover:items-start hover:text-blue-500 bg-cover font-bold cursor-pointer`}
                         key={category.name}

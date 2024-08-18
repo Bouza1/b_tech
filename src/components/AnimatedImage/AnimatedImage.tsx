@@ -5,22 +5,21 @@ import { storage } from '../../firebase.ts';
 import { Phone } from '../../interfaces';
 import { useNavigate } from 'react-router-dom';
 
-const AnimatedImage = ({ imgUrl, name, bannerStats, id }: Phone) => {
+const AnimatedImage = ({ imgUrl, name, bannerStats, id, table }: Phone) => {
     const [key, setKey] = useState(0);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     const handleToProductPage = () => {
-        navigate(`/product/${id}`);
-    }
-
+        navigate(`/product/${table}/${id}`);
+    };
 
     useEffect(() => {
         const fetchImage = async () => {
             setLoading(true);
             try {
-                const imageRef = ref(storage, `phones/${imgUrl}`);
+                const imageRef = ref(storage, `${table}/${imgUrl}`);
                 const url = await getDownloadURL(imageRef);
                 setImageUrl(url);
             } catch (error) {
@@ -92,7 +91,10 @@ const AnimatedImage = ({ imgUrl, name, bannerStats, id }: Phone) => {
                 viewport={{ once: false }}
             >
                 {bannerStats?.map((item, index) => (
-                    <div className="rounded-md bg-blue-500 px-4 py-2 sm:text-md md:text-lg font-monserrat text-white" key={`bannerStat_${name}_${index}`}>
+                    <div
+                        className="rounded-md bg-blue-500 px-4 py-2 sm:text-md md:text-lg font-monserrat text-white"
+                        key={`bannerStat_${name}_${index}`}
+                    >
                         <p>{item}</p>
                     </div>
                 ))}

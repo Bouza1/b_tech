@@ -1,3 +1,3 @@
-import {NewsArticle, Phone} from './interfaces.ts';
+import { NewsArticle, Phone } from './interfaces.ts';
 
-export type {NewsArticle, Phone};
+export type { NewsArticle, Phone };

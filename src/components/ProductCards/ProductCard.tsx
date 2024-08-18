@@ -20,7 +20,7 @@ const ProductCard = ({
     savings,
     tags,
     below1,
-    id
+    id,
 }: ProductCardProps) => {
     return (
         <motion.div
@@ -48,8 +48,10 @@ const ProductCard = ({
                 <h3 className="text-lg font-sans text-left">{name}</h3>
                 <div className="flex flex-wrap gap-1.5">
                     {tags.map((tag, index) => (
-                        <span className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500"
-                        key={`${name}_tag_${index}`}>
+                        <span
+                            className="px-3 py-0.5 border border-blue-500 text-[11px] text-blue-500"
+                            key={`${name}_tag_${index}`}
+                        >
                             {tag}
                         </span>
                     ))}

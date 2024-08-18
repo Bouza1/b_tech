@@ -1,7 +1,5 @@
 import { paint, support, repair } from '../assets/icons';
-import {
-    phonePixel8,
-} from '../assets/images/phones';
+import { phonePixel8 } from '../assets/images/phones';
 import { gCardGigaByte8GB, ramDominatorPlatinumRGB } from '../assets/images/computer_accessories';
 
 import { NavLink } from '../components/Misc/NavBar.tsx';
@@ -16,7 +14,6 @@ export const navLinks: NavLink[] = [
     { name: 'Repairs', href: 'repairs', current: false },
     { name: 'News', href: 'newsPage', current: false },
 ];
-
 
 export const statistics = [
     { value: '1y', label: 'Warranty' },
@@ -106,13 +103,12 @@ export const services = [
 
 type category = {
     name: string;
-    background:string;
+    background: string;
 };
 
 export const categories: category[] = [
-    { name: 'Computers', background: 'bg-computerCategory'},
+    { name: 'Computers', background: 'bg-computerCategory' },
     { name: 'Hardware', background: 'bg-hardwareCategory' },
     { name: 'Mobile Phones', background: 'bg-mobileCategory' },
     { name: 'Accessories', background: 'bg-computerCategory' },
 ];
-

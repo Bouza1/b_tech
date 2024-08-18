@@ -18,16 +18,16 @@ const LandingPage = () => {
                     <PopularProducts key={'products'} />
                 </Section>
                 <Section id={'about_us_section'}>
-                    <AboutUs key={'about_us'}  />
+                    <AboutUs key={'about_us'} />
                 </Section>
                 <Section id={'repairs_section'}>
-                    <Repairs key={'repairs'}  />
+                    <Repairs key={'repairs'} />
                 </Section>
                 <Section id={'news_section'}>
-                    <NewsLandingStrip key={'newsPage'}  />
+                    <NewsLandingStrip key={'newsPage'} />
                 </Section>
             </main>
-            <Footer/>
+            <Footer />
         </>
     );
 };

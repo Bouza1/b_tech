@@ -1,8 +1,7 @@
 import { NewsCard } from './index.tsx';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
-import {  useState } from 'react';
+import { useState } from 'react';
 import { useFetchNewsArticles } from '../../../../hooks/useFetchNewsArticles.ts';
-
 
 const NewsLandingStrip = () => {
     const PAGE_SIZE = 3;
@@ -23,7 +22,6 @@ const NewsLandingStrip = () => {
 
     const startIndex = currentPage * PAGE_SIZE;
     const endIndex = startIndex + PAGE_SIZE;
-
 
     if (loading) {
         return <div>Loading...</div>; // Display a loading message or spinner
